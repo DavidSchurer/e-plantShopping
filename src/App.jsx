@@ -12,6 +12,10 @@ function App() {
     setShowProductList(true);
   };
 
+  const handleReturnClick = () => {
+    setShowProductList(false);
+}
+
   return (
     <div className="app-container">
       <div className={`landing-page ${showProductList ? 'fade-out' : ''}`}>
@@ -33,13 +37,10 @@ function App() {
 
       </div>
       <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
-        <ProductList />
+        <ProductList toLanding={handleReturnCLick}/>
       </div>
     </div>
   );
 }
 
 export default App;
-
-
-
